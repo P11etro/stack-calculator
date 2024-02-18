@@ -29,7 +29,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Font;
 
-/** The ComplexCalculatorController class controls the Calculator and the GUI.
+/**
+ * The ComplexCalculatorController class controls the Calculator and the GUI.
  *
  * @author group11
  */
@@ -270,6 +271,31 @@ public class ComplexCalculatorController implements Initializable {
     private void handleFixedButton(ActionEvent event) {
         Button b = (Button) event.getSource();
         textInput.setText(b.getText());
+    }
+
+    /**
+     * Function used to execute the action of a button without pressing the
+     * "Enter" button.
+     *
+     * @param event
+     */
+    @FXML
+    private void handleRapidButton(ActionEvent event) {
+        Button b = (Button) event.getSource();
+        String input = b.getText();
+        switch (input) {
+            case "×":
+                input = "*";
+                break;
+            case "÷":
+                input = "/";
+                break;
+            case "√":
+                input = "sqrt";
+                break;
+        }   
+        textInput.setText(input);
+        inputSend();
     }
 
     /**

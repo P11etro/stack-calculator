@@ -1,3 +1,7 @@
+@font-face {
+    src: url('Inter-Regular.ttf');
+}
+
 .button {
     -fx-border-insets: -1;
     -fx-border-color: black;
@@ -13,6 +17,7 @@
 
 #numButton {
     -fx-background-color: #FDF7E7;
+    -fx-font-size: 27;
 }
 
 #numButton:hover {
@@ -89,6 +94,17 @@
     -fx-border-insets: -1;
     -fx-border-color: black;
     -fx-border-width: 2;
+    -fx-padding: 0 0 0 17;
+    -fx-font-family: 'Inter Regular';
+}
+
+#varList .arrow {
+    -fx-font-size: 16;
+    -fx-background-color: black;
+}
+
+#varList .arrow-button {
+    -fx-padding: 0 8 0 0;
 }
 
 #varList:hover {
@@ -152,6 +168,10 @@
     -fx-border-color: black;
     -fx-border-width: 2;
     -fx-background-color: #FDF7E7;
+}
+
+#stackView .list-cell {
+    -fx-font-family: 'Inter Regular';
 }
 
 #stackView .list-cell:even {

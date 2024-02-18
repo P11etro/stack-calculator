@@ -132,4 +132,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <name>stackCalculator</name>
 </project>

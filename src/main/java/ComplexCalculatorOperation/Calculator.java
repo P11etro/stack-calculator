@@ -43,7 +43,9 @@ public class Calculator {
         List<String> stackOperations = Arrays.asList("clear", "drop", "dup", "swap", "over");
         List<String> operations = Arrays.asList("+", "-", "*", "/", "+-", "sqrt");
 
-        if (input.matches("^[<+\\->][a-z]$")) {
+        if (input.equals(".")) {
+            throw new InvalidInputException();
+        } else if (input.matches("^[<+\\->][a-z]$")) {
             variableOperation.operationInterpreter(input);
         } else if (operations.contains(input.toLowerCase())) {
             arithmeticOperation.operationInterpreter(input);
@@ -51,7 +53,7 @@ public class Calculator {
             stackOperation.operationInterpreter(input);
         } else if (Complex.isComplex(input)) {
             stack.push(new Complex(input));
-        } else {
+        }  else {
             throw new InvalidInputException();
         }
     }

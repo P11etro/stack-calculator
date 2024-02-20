@@ -94,9 +94,6 @@ public class ComplexCalculatorController implements Initializable {
 
         StringProperty btn3 = new SimpleStringProperty("-");
         subVar.textProperty().bind(Bindings.concat("-", varList.valueProperty()));
-
-        deleteButton.disableProperty().bind(Bindings.isEmpty(textInput.textProperty()));
-        enterButton.disableProperty().bind(Bindings.isEmpty(textInput.textProperty()));
     }
 
     /**
@@ -233,8 +230,10 @@ public class ComplexCalculatorController implements Initializable {
      */
     @FXML
     private void handleDeleteAction(ActionEvent event) {
-        String s = textInput.getText().substring(0, textInput.getText().length() - 1);
-        textInput.setText(s);
+        if (!textInput.getText().equals("")) {
+            String s = textInput.getText().substring(0, textInput.getText().length() - 1);
+            textInput.setText(s);
+        }
     }
 
     /**
@@ -245,7 +244,9 @@ public class ComplexCalculatorController implements Initializable {
      */
     @FXML
     private void handleEnter(ActionEvent event) {
-        inputSend();
+        if (!textInput.getText().equals("")) {
+            inputSend();
+        }
     }
 
     /**
@@ -293,7 +294,7 @@ public class ComplexCalculatorController implements Initializable {
             case "√":
                 input = "sqrt";
                 break;
-        }   
+        }
         textInput.setText(input);
         inputSend();
     }

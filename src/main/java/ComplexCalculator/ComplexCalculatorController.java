@@ -160,15 +160,15 @@ public class ComplexCalculatorController implements Initializable {
         try {
             c.interpreter(textInput.getText());
         } catch (InvalidInputException e) {
-            exceptionDialog("Invalid Input Detected", "Bad input insertion!");
+            exceptionDialog("Invalid Input Detected", "Please insert a number in the format a+bj or an operation!");
         } catch (NotEnoughDataException e) {
-            exceptionDialog("Not Enough Data", "There isn't enough data in the stack for the operation!");
+            exceptionDialog("Not Enough Operands", "There aren't enough operands in the stack for the operation!");
         } catch (NotEnoughStackElementsException e) {
-            exceptionDialog("Not Enough Stack Element", "There aren't enough elements in the stack!");
+            exceptionDialog("Not Enough Stack Elements", "There aren't enough elements in the stack!");
         } catch (VariableException e) {
-            exceptionDialog("Variable Exception", "Impossible variable operation inserted!");
+            exceptionDialog("Empty Variable Exception", "The selected variable isn't initialized!");
         } catch (ZeroDivisionException e) {
-            exceptionDialog("Zero Division Detected", "Impossible division by 0!");
+            exceptionDialog("Zero Division Detected", "Dividing by 0 is impossible!");
         } finally {
             textInput.setText("");
             oblist.setAll(c.getStack());

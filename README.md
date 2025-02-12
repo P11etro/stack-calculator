@@ -3,11 +3,11 @@ A simple stack-based calculator that supports complex numbers.
 
 <img width="760" alt="calculator" src="https://github.com/GiaSen/group11_software_eng/assets/148695294/c130369b-2745-413c-ba3c-eec17419c4cf">
 
-### Functions
-The calculator implements the following functions:
-- Arithmetic operations (+,-,/,*,+-,squareroot);
-- Stack operation (swap,over,dup,drop,clear);
-- Variable operation (fromVarToStack,fromStackToVar,sumVar,subVar).
+### Features
+The calculator implements:
+- Arithmetic operations (+,-,/,*,+-,squareroot).
+- Stack operations (swap,over,dup,drop,clear).
+- Variable operations (fromVarToStack,fromStackToVar,sumVar,subVar).
 
 ### Numbers
 The valid format for complex number insertion is a+bj.  
